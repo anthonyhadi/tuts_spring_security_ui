@@ -14,7 +14,7 @@ zuul:
   routes:
     resource:
       path: /resource/**
-      url: http://localhost:9000
+      url: http://localhost:9092
     user:
       path: /user/**
       url: http://localhost:9091/auth/user
