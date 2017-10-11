@@ -1,0 +1,20 @@
+security:
+  user:
+    password: none
+  oauth2:
+      client:
+        accessTokenUri: http://localhost:9091/auth/oauth/token
+        userAuthorizationUri: http://localhost:9091/auth/oauth/authorize
+        clientId: acme
+        clientSecret: acmesecret
+      resource:
+        userInfoUri: http://localhost:9091/auth/user
+
+zuul:
+  routes:
+    resource:
+      path: /resource/**
+      url: http://localhost:9000
+    user:
+      path: /user/**
+      url: http://localhost:9091/auth/user
